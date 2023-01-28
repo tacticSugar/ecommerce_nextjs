@@ -57,7 +57,7 @@ export default function TopHeader() {
               <RiArrowDropDownFill />
             </div>
           </li>
-          <UserMenu />
+
           {/* )} */}
           {/* {visible && <UserMenu session={session} />} */}
           {/* </li> */}

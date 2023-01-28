@@ -1,0 +1,26 @@
+.footer {
+  background: #f8f8f8;
+  &__container {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+      'payment'
+      'links'
+      'newsletter'
+      'socials'
+      'copyright';
+    gap: 3rem;
+    padding: 1rem;
+    @media (min-width: 800px) {
+      grid-template-areas:
+        'links socials'
+        'links newsletter'
+        'copyright payment';
+    }
+    @media (min-width: 1200px) {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
+}
