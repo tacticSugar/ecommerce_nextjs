@@ -5,7 +5,7 @@ import NewsLetter from './NewsLetter/NewsLetter'
 import Payment from './Payment/Payment'
 import Socials from './Socials/Socials'
 
-export default function Footer() {
+export default function Footer({ country }) {
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__container}>

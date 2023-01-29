@@ -1,14 +1,39 @@
 import { Inter } from '@next/font/google'
+import axios from 'axios'
 import Footer from 'components/Footer/Footer'
 import Socials from 'components/Footer/Socials/Socials'
 import Header from 'components/Header/Header'
+import db from 'utils/db'
 
-export default function Home() {
+export default function Home({ country }) {
   return (
     <>
-      <Header />
+      <Header country={country} />
 
-      <Footer />
+      <Footer country={country} />
     </>
   )
+}
+
+export async function getServerSideProps() {
+  db.connectDb()
+  // let products = await Product.find().sort({ createdAt: -1 }).lean()
+  // let data = await axios
+  //   .get('https://api.ipregistry.co/?key=nut9d9kyd3xrzysn')
+  //   .then((res) => {
+  //     return res.data.location.country
+  //   })
+  //   .catch((err) => {
+  //     console.log(err)
+  //   })
+  return {
+    props: {
+      // products: JSON.parse(JSON.stringify(products)),
+      //country: { name: data.name, flag: data.flag.emojitwo },
+      country: {
+        name: 'Morocco',
+        flag: '/images/Flag_of_Russia.png',
+      },
+    },
+  }
 }

@@ -7,7 +7,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import UserMenu from '../UserMenu/UserMenu'
 
-export default function TopHeader() {
+export default function TopHeader({ country }) {
   const [visible, setVisible] = useState(false)
 
   return (
@@ -16,13 +16,8 @@ export default function TopHeader() {
         <div></div>
         <ul className={styles.top__list}>
           <li className={styles.li}>
-            <Image
-              src={'/public/images/Flag_of_Russia.png'}
-              alt="flag"
-              width={28}
-              height={28}
-            />
-            <span>Russia / USD</span>
+            <Image src={country.flag} alt="flag" width={28} height={28} />
+            <span>{country.name} / USD</span>
           </li>
           <li className={styles.li}>
             <MdSecurity />
