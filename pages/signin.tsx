@@ -15,6 +15,7 @@ export async function getServerSideProps(context) {
   const { req, query } = context
 
   const session = await getSession({ req })
+
   let { callbackUrl } = query
   if (!callbackUrl) {
     callbackUrl = '/'
