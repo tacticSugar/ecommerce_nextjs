@@ -3,15 +3,16 @@ import { BiLeftArrowAlt } from 'react-icons/bi'
 import Link from 'next/link'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
-import LoginInput from '../components/inputs/loginInput'
 import { useState } from 'react'
-import CircledIconBtn from '../components/buttons/circledIconBtn'
-import { signIn } from 'next-auth/react'
+import { getCsrfToken, getProviders, getSession, signIn } from 'next-auth/react'
 import axios from 'axios'
-import DotLoaderSpinner from '../components/loaders/dotLoader'
 import Router from 'next/router'
 import Header from 'components/Header/Header'
 import Footer from 'components/Footer/Footer'
+import LoginInput from 'components/inputs/LoginInput/LoginInput'
+import CircledIconBtn from 'components/buttons/CircledIconBtn/CircledIconBtn'
+import DotLoaderSpinner from 'components/loaders/DotLoader/DotLoader'
+
 const initialvalues = {
   login_email: '',
   login_password: '',
@@ -23,6 +24,7 @@ const initialvalues = {
   error: '',
   login_error: '',
 }
+
 export default function Signin({ providers, callbackUrl, csrfToken }) {
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState(initialvalues)
@@ -37,6 +39,7 @@ export default function Signin({ providers, callbackUrl, csrfToken }) {
     error,
     login_error,
   } = user
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setUser({ ...user, [name]: value })
@@ -262,3 +265,28 @@ export default function Signin({ providers, callbackUrl, csrfToken }) {
     </>
   )
 }
+
+// export async function getServerSideProps(context) {
+//   const { req, query } = context
+
+//   const session = await getSession({ req })
+//   const { callbackUrl } = query
+
+//   if (session) {
+//     return {
+//       redirect: {
+//         destination: callbackUrl,
+//       },
+//     }
+//   }
+//   const csrfToken = await getCsrfToken(context)
+//   const providers = Object.values(await getProviders())
+
+//   return {
+//     props: {
+//       providers,
+//       csrfToken,
+//       callbackUrl,
+//     },
+//   }
+// }

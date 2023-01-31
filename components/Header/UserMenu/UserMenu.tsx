@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import styles from './UserMenu.module.scss'
 import { signOut, signIn } from 'next-auth/react'
+
 export default function UserMenu({ session }) {
   return (
     <div className={styles.menu}>
