@@ -78,7 +78,7 @@ export default function Links() {
       {links.map((link, i) => (
         <ul key={link.heading}>
           {i === 0 ? (
-            <Image src="../../../logo.png" alt="" />
+            <img src="../../../logo.png" alt="" />
           ) : (
             <b>{link.heading}</b>
           )}

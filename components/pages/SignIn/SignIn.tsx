@@ -1,4 +1,4 @@
-import styles from './SignIn.module.scss'
+import styles from './Signin.module.scss'
 import { BiLeftArrowAlt } from 'react-icons/bi'
 import Link from 'next/link'
 import { Formik, Form } from 'formik'
@@ -6,16 +6,12 @@ import * as Yup from 'yup'
 import LoginInput from '../components/inputs/loginInput'
 import { useState } from 'react'
 import CircledIconBtn from '../components/buttons/circledIconBtn'
-import {
-  getCsrfToken,
-  getProviders,
-  getSession,
-  signIn,
-  country,
-} from 'next-auth/react'
+import { signIn } from 'next-auth/react'
 import axios from 'axios'
 import DotLoaderSpinner from '../components/loaders/dotLoader'
 import Router from 'next/router'
+import Header from 'components/Header/Header'
+import Footer from 'components/Footer/Footer'
 const initialvalues = {
   login_email: '',
   login_password: '',
@@ -27,7 +23,7 @@ const initialvalues = {
   error: '',
   login_error: '',
 }
-export default function signin({ providers, callbackUrl, csrfToken }) {
+export default function Signin({ providers, callbackUrl, csrfToken }) {
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState(initialvalues)
   const {
@@ -129,7 +125,7 @@ export default function signin({ providers, callbackUrl, csrfToken }) {
               <BiLeftArrowAlt />
             </div>
             <span>
-              We'd be happy to join us ! <Link href="/">Go Store</Link>
+              Be happy to join us ! <Link href="/">Go Store</Link>
             </span>
           </div>
           <div className={styles.login__form}>
@@ -265,28 +261,4 @@ export default function signin({ providers, callbackUrl, csrfToken }) {
       <Footer country="Morocco" />
     </>
   )
-}
-
-export async function getServerSideProps(context) {
-  const { req, query } = context
-
-  const session = await getSession({ req })
-  const { callbackUrl } = query
-
-  if (session) {
-    return {
-      redirect: {
-        destination: callbackUrl,
-      },
-    }
-  }
-  const csrfToken = await getCsrfToken(context)
-  const providers = Object.values(await getProviders())
-  return {
-    props: {
-      providers,
-      csrfToken,
-      callbackUrl,
-    },
-  }
 }

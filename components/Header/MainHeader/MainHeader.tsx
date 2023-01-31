@@ -26,7 +26,7 @@ export default function MainHeader(/* { searchHandler } */) {
     <div className={styles.main}>
       <div className={styles.main__container}>
         <Link href="/" className={styles.logo}>
-          PutLogoImgHere
+          <img src="../../../logo.png" alt="" />
         </Link>
         <form onSubmit={(e) => handleSearch(e)} className={styles.search}>
           <input

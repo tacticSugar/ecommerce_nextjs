@@ -45,10 +45,10 @@ export default NextAuth({
       clientId: process.env.TWITTER_ID,
       clientSecret: process.env.TWITTER_SECRET,
     }),
-    FacebookProvider({
-      clientId: process.env.FACEBOOK_ID,
-      clientSecret: process.env.FACEBOOK_SECRET,
-    }),
+    // FacebookProvider({
+    //   clientId: process.env.FACEBOOK_ID,
+    //   clientSecret: process.env.FACEBOOK_SECRET,
+    // }),
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,

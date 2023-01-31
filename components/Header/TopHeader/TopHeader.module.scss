@@ -12,6 +12,7 @@
   }
   &__list {
     display: flex;
+    align-items: center;
     gap: 15px;
     .li {
       position: relative;

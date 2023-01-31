@@ -31,8 +31,8 @@ export async function getServerSideProps() {
       // products: JSON.parse(JSON.stringify(products)),
       //country: { name: data.name, flag: data.flag.emojitwo },
       country: {
-        name: 'Morocco',
-        flag: '/images/Flag_of_Russia.png',
+        name: 'Russia',
+        flag: 'https://cdn.icon-icons.com/icons2/2087/PNG/512/russia_icon_127851.png',
       },
     },
   }
