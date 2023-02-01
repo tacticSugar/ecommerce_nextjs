@@ -16,7 +16,7 @@ export default function Home({ country }) {
 }
 
 export async function getServerSideProps() {
-  db.connectDb()
+  // db.connectDb()
   // let products = await Product.find().sort({ createdAt: -1 }).lean()
   // let data = await axios
   //   .get('https://api.ipregistry.co/?key=nut9d9kyd3xrzysn')

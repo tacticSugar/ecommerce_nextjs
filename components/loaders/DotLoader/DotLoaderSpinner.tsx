@@ -1,4 +1,4 @@
-import styles from './DotLoader.module.scss'
+import styles from './DotLoaderSpinner.module.scss'
 import DotLoader from 'react-spinners/DotLoader'
 
 export default function DotLoaderSpinner({ loading }) {

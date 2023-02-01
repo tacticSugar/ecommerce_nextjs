@@ -6,6 +6,7 @@ import Payment from './Payment/Payment'
 import Socials from './Socials/Socials'
 
 export default function Footer({ country }) {
+  console.log(country)
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__container}>

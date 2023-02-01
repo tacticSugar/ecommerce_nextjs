@@ -4,14 +4,14 @@ import Link from 'next/link'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import { useState } from 'react'
-import { getCsrfToken, getProviders, getSession, signIn } from 'next-auth/react'
+import { signIn } from 'next-auth/react'
 import axios from 'axios'
 import Router from 'next/router'
 import Header from 'components/Header/Header'
 import Footer from 'components/Footer/Footer'
 import LoginInput from 'components/inputs/LoginInput/LoginInput'
 import CircledIconBtn from 'components/buttons/CircledIconBtn/CircledIconBtn'
-import DotLoaderSpinner from 'components/loaders/DotLoader/DotLoader'
+import DotLoaderSpinner from 'components/loaders/DotLoader/DotLoaderSpinner'
 
 const initialvalues = {
   login_email: '',
@@ -90,7 +90,7 @@ export default function Signin({ providers, callbackUrl, csrfToken }) {
         }
         const res = await signIn('credentials', options)
         Router.push('/')
-      }, 2000)
+      }, 1000)
     } catch (error) {
       setLoading(false)
       setUser({ ...user, success: '', error: error.response.data.message })
@@ -110,12 +110,12 @@ export default function Signin({ providers, callbackUrl, csrfToken }) {
       setLoading(false)
       setUser({ ...user, login_error: res?.error })
     } else {
-      return Router.push(callbackUrl || '/')
+      return Router.push(callbackUrl)
     }
   }
   const country = {
-    name: 'Morocco',
-    flag: 'https://cdn-icons-png.flaticon.com/512/197/197551.png?w=360',
+    name: 'Russia',
+    flag: 'https://cdn.icon-icons.com/icons2/2087/PNG/512/russia_icon_127851.png',
   }
   return (
     <>
@@ -261,7 +261,7 @@ export default function Signin({ providers, callbackUrl, csrfToken }) {
           </div>
         </div>
       </div>
-      <Footer country="Morocco" />
+      <Footer country={country} />
     </>
   )
 }
