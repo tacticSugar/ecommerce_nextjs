@@ -3,13 +3,15 @@ import axios from 'axios'
 import Footer from 'components/Footer/Footer'
 import Socials from 'components/Footer/Socials/Socials'
 import Header from 'components/Header/Header'
+import HomePage from 'components/pages/home/HomePage'
+
 import db from 'utils/db'
 
 export default function Home({ country }) {
   return (
     <>
       <Header country={country} />
-
+      <HomePage />
       <Footer country={country} />
     </>
   )
