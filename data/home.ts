@@ -43,7 +43,6 @@ export const offersAarray = [
     discount: '5',
   },
 ]
-
 export const menuArray = [
   {
     name: "Women's Fashion",
@@ -270,7 +269,6 @@ export const menuArray = [
     images: [],
   },
 ]
-
 export const userSwiperArray = [
   {
     image:
@@ -308,7 +306,6 @@ export const userSwiperArray = [
     link: '',
   },
 ]
-
 export const flashDealsArray = [
   {
     image:
@@ -459,7 +456,6 @@ export const women_accessories = [
       'https://img.ltwebstatic.com/images3_pi/2022/06/20/16557062656c0432e06a65323afab13e64550c45d6_thumbnail_600x.webp',
   },
 ]
-
 export const women_swiper = [
   {
     name: 'HARRY POTTER | SHEIN Checkered & Snake Pattern Sweater Vest Without Blouse',
@@ -516,7 +512,6 @@ export const women_swiper = [
     price: '11.58',
   },
 ]
-
 export const gamingSwiper = [
   {
     name: '',

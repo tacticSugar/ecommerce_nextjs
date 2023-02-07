@@ -1,13 +1,12 @@
 import styles from './FlashDeals.module.scss'
 import { MdFlashOn } from 'react-icons/md'
-import Countdown from '../../countdown'
-import { useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Navigation } from 'swiper'
-import { flashDealsArray } from '../../../data/home'
-import FlashCard from './Card'
+import FlashCard from './FlashCard'
+import { flashDealsArray } from 'data/home'
+import Countdown from 'components/countdown/Countdown'
 
 export default function FlashDeals() {
   return (
@@ -17,15 +16,18 @@ export default function FlashDeals() {
           FLASH SALE
           <MdFlashOn />
         </h1>
-        <Countdown date={new Date(2022, 12, 30)} />
+        <Countdown date={new Date(2023, 12, 31)} />
       </div>
       <Swiper
-        slidesPerView={1}
+        slidesPerView={6}
         spaceBetween={10}
         navigation={true}
         modules={[Navigation]}
-        className="flashDeals__swiper"
+        className="flashDeals_swiper"
         breakpoints={{
+          320: {
+            slidesPerView: 1,
+          },
           450: {
             slidesPerView: 2,
           },
@@ -45,8 +47,8 @@ export default function FlashDeals() {
       >
         <div className={styles.flashDeals__list}>
           {flashDealsArray.map((product, i) => (
-            <SwiperSlide>
-              <FlashCard product={product} key={i} />
+            <SwiperSlide key={i}>
+              <FlashCard product={product} />
             </SwiperSlide>
           ))}
         </div>

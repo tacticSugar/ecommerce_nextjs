@@ -1,8 +1,8 @@
 import styles from './Main.module.scss'
-import MainSwiper from './MainSwiper'
-import Offers from './Offers'
+import MainSwiper from './MainSwiper/MainSwiper'
+import Offers from './Offers/Offers'
 import { useSession } from 'next-auth/react'
-import Menu from './Menu'
+import Menu from './Menu/Menu'
 import Link from 'next/link'
 import { IoSettingsOutline } from 'react-icons/io5'
 import { HiOutlineClipboardList } from 'react-icons/hi'
@@ -13,8 +13,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/effect-cards'
 import { EffectCards, Navigation } from 'swiper'
-import User from './User'
-import MainHeader from './MainHeader'
+import User from './User/User'
+import MainHeader from './MainHeader/MainHeader'
 
 export default function Main() {
   const { data: session } = useSession()

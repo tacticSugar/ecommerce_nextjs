@@ -1,4 +1,4 @@
-import styles from './Main.module.scss'
+import styles from './User.module.scss'
 import 'swiper/css'
 import 'swiper/css/effect-cards'
 import { useSession } from 'next-auth/react'
@@ -72,7 +72,7 @@ export default function User() {
             grabCursor={true}
             navigation={true}
             modules={[EffectCards, Navigation]}
-            className="user__swiper"
+            className="user_swiper"
             style={{
               maxWidth: '180px',
               height: '240px',

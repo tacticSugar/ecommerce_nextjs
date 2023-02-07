@@ -3,6 +3,15 @@ import Category from './category/Category'
 import FlashDeals from './flashDeals/FlashDeals'
 import Main from './main/Main'
 import { useSession } from 'next-auth/react'
+import {
+  women_dresses,
+  women_shoes,
+  women_accessories,
+  women_swiper,
+  gamingSwiper,
+} from 'data/home'
+import { useMediaQuery } from 'react-responsive'
+import ProductsSwiper from 'components/productsSwiper/ProductsSwiper'
 
 export default function HomePage(
   {
@@ -10,14 +19,14 @@ export default function HomePage(
   }
 ) {
   const { data: session } = useSession()
-  // const isMedium = useMediaQuery({ query: '(max-width:850px)' })
-  // const isMobile = useMediaQuery({ query: '(max-width:550px)' })
+  const isMedium = useMediaQuery({ query: '(max-width:850px)' })
+  const isMobile = useMediaQuery({ query: '(max-width:550px)' })
 
   return (
     <div className={styles.home}>
       <div className={styles.container}>
         <Main />
-        {/* <FlashDeals />
+        <FlashDeals />
         <div className={styles.home__category}>
           <Category
             header="Dresses"
@@ -45,7 +54,12 @@ export default function HomePage(
           />
         </div>
         <ProductsSwiper products={women_swiper} />
-        <div className={styles.products}>
+        <ProductsSwiper
+          products={gamingSwiper}
+          header="For Gamers"
+          bg="green"
+        />
+        {/* <div className={styles.products}>
           {products.map((product) => (
             <ProductCard product={product} key={product._id} />
           ))}
