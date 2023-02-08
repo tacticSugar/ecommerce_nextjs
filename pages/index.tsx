@@ -3,16 +3,16 @@ import axios from 'axios'
 import Footer from 'components/Footer/Footer'
 import Socials from 'components/Footer/Socials/Socials'
 import Header from 'components/Header/Header'
-import HomePage from 'components/pages/home/HomePage'
+import Home from 'components/pages/home/Home'
 import Product from 'models/Product'
 
 import db from 'utils/db'
 
-export default function Home({ country, products }) {
+export default function HomePage({ country, products }) {
   return (
     <>
       <Header country={country} />
-      <HomePage products={products} />
+      <Home products={products} />
       <Footer country={country} />
     </>
   )

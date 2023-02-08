@@ -1,4 +1,4 @@
-import styles from './HomePage.module.scss'
+import styles from './Home.module.scss'
 import Category from './category/Category'
 import FlashDeals from './flashDeals/FlashDeals'
 import Main from './main/Main'
@@ -14,7 +14,7 @@ import { useMediaQuery } from 'react-responsive'
 import ProductsSwiper from 'components/productsSwiper/ProductsSwiper'
 import ProductCard from 'components/productCard/ProductCard'
 
-export default function HomePage({ products }) {
+export default function Home({ products }) {
   const { data: session } = useSession()
   const isMedium = useMediaQuery({ query: '(max-width:850px)' })
   const isMobile = useMediaQuery({ query: '(max-width:550px)' })
