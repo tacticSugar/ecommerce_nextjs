@@ -12,12 +12,9 @@ import {
 } from 'data/home'
 import { useMediaQuery } from 'react-responsive'
 import ProductsSwiper from 'components/productsSwiper/ProductsSwiper'
+import ProductCard from 'components/productCard/ProductCard'
 
-export default function HomePage(
-  {
-    /* products */
-  }
-) {
+export default function HomePage({ products }) {
   const { data: session } = useSession()
   const isMedium = useMediaQuery({ query: '(max-width:850px)' })
   const isMobile = useMediaQuery({ query: '(max-width:550px)' })
@@ -53,17 +50,21 @@ export default function HomePage(
             background="#000"
           />
         </div>
-        <ProductsSwiper products={women_swiper} />
+        <ProductsSwiper
+          products={women_swiper}
+          header={undefined}
+          bg={undefined}
+        />
         <ProductsSwiper
           products={gamingSwiper}
           header="For Gamers"
           bg="green"
         />
-        {/* <div className={styles.products}>
+        <div className={styles.products}>
           {products.map((product) => (
             <ProductCard product={product} key={product._id} />
           ))}
-        </div> */}
+        </div>
       </div>
     </div>
   )

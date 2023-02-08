@@ -2,6 +2,7 @@
   position: relative;
   width: 290px;
   height: 500px;
+
   &__infos {
     width: 100%;
     margin-top: 1px;
@@ -29,9 +30,9 @@
       box-shadow: $shadow-1;
       cursor: pointer;
       outline-offset: 2px;
-      &:hover {
-        outline: 1px solid #000;
-      }
+      // &:hover {
+      //   outline: 12px solid #000;
+      // }
     }
     .active {
       outline: 1px solid #000;
@@ -60,13 +61,14 @@
     font-weight: 600;
   }
 }
+
 .swiper {
   position: relative;
   cursor: pointer;
   background: #fff;
+
   img {
     height: 390px;
     display: block;
-    border-radius: 10px;
   }
 }
